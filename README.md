@@ -5,9 +5,9 @@ ASP.NET CORE 3.0.0 and EntityFrameworkCore and SQL Server Express were used.
 To start the application, you need to customize the server name in the connection string. It is currently located there
 the name of my server.
 
-Make sure we have ef tools 3.0.0 installed so we can use EntityFramework and SQL Server Express.
+Make sure to have ef tools 3.0.0 installed so we can use EntityFramework and SQL Server Express.
 
-Running the dotnet run command will create a database on the specified server.
+Running the dotnet run command will create and sedd the database on the specified server.
 
 WebApi was tested through Postman.
 
@@ -27,5 +27,6 @@ Post and Put methods, PostsContoller receive data in the format:
             "reprehenderit"
         ]
     }
+ Previous example is example of Updating record trough Postman.
   
-The database consists of a single table that has a tags field and stores data from tagList.
+The database consists of a single table that has a tags field where stores data from tagList.
