@@ -5,9 +5,9 @@ using Blog.API.Dtos;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Blog.API.Controllers
-{
-    [Route("api/[controller]")]
+{   
     [ApiController]
+    [Route("[controller]")]
     public class TagsController : ControllerBase
     {
         private readonly IBlogRepository _repo;

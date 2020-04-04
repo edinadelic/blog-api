@@ -13,9 +13,8 @@ using Newtonsoft.Json;
 
 namespace Blog.API.Controllers
 {
-
-    [Route("api/[controller]")]
     [ApiController]
+    [Route("[controller]")]
     public class PostsController : ControllerBase
     {
         private readonly IBlogRepository _repo;
@@ -41,7 +40,7 @@ namespace Blog.API.Controllers
             
         }
 
-        // GET api/posts/:slug
+        // GET posts/:slug
         [HttpGet("{slug}")]
         public async Task<IActionResult> GetBlogPost(string slug)
         {
@@ -52,7 +51,7 @@ namespace Blog.API.Controllers
             return Ok(postToReturn);
         }
 
-        // POST api/posts
+        // POST posts
         [Consumes("application/json")]
         [HttpPost]
         public void Post([FromBody] BlogPostDto blogPostDto)
@@ -79,7 +78,7 @@ namespace Blog.API.Controllers
            _repo.Add(blogPostToInsert);
         }
 
-        // PUT api/post/slug
+        // PUT post/slug
         [HttpPut("{slug}")]
         public BlogPost Update(string slug, [FromBody] BlogPostDto blogPostDto)
         {
@@ -102,7 +101,7 @@ namespace Blog.API.Controllers
            return _repo.Update(slug, blogPost);
         }
         
-        // DELETE api/posts/slug
+        // DELETE posts/slug
         [HttpDelete("{slug}")]
         public void Delete(string slug)
         {
